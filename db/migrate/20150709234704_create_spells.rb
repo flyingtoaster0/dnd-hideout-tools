@@ -1,7 +1,6 @@
 class CreateSpells < ActiveRecord::Migration
   def change
     create_table :spells do |t|
-      t.integer :id
       t.string :name
       t.integer :level
       t.string :range
@@ -11,8 +10,8 @@ class CreateSpells < ActiveRecord::Migration
       t.boolean :concentration
       t.boolean :ritual
       t.string :components
-      t.string :materials
-      t.string :description
+      t.text :materials
+      t.text :description
     end
   end
 end
