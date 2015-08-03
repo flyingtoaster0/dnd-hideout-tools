@@ -13,13 +13,23 @@
 
 ActiveRecord::Schema.define(version: 20150709234705) do
 
-  create_table "character_class_spells", force: :cascade do |t|
-    t.string "class_name",     limit: 255
-    t.string "spell_id", limit: 255
+  create_table "character_class_spells", id: false, force: :cascade do |t|
+    t.string "class_name", limit: 255
+    t.string "spell_id",   limit: 255
   end
 
   create_table "spells", force: :cascade do |t|
-    t.string "name", limit: 255
+    t.string  "name",          limit: 255
+    t.integer "level",         limit: 4
+    t.string  "range",         limit: 255
+    t.string  "casting_time",  limit: 255
+    t.string  "duration",      limit: 255
+    t.string  "school",        limit: 255
+    t.boolean "concentration"
+    t.boolean "ritual"
+    t.string  "components",    limit: 255
+    t.text    "materials",     limit: 65535
+    t.text    "description",   limit: 65535
   end
 
 end
